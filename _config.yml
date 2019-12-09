@@ -107,15 +107,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "MaxHyeon"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  bio              : "First step"
+  location         : "Republic of Korea"
   email            :
   links:
-    - label: "Email"
+    - label: "e-Mail"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+      url: mailto:americano314@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
