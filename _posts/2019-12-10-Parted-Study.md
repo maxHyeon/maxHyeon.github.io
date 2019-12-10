@@ -17,10 +17,8 @@ categories: Linux, Parted
 ex) 
 (parted) mkpart primary 0 100GB (파티션 1 생성) 
 (parted) mkpart primary 100GB 100% (파티션 2 생성)
-
 (parted) print
 (parted) q 
-
 mkfs.ext4 /dev/sdb1 
 ```
 
@@ -34,6 +32,7 @@ todo..추가하기
 todo..추가하기 (extension 등) 
 
 5. parted 이후 vg, pv, lv 작업 
+
 ```bash
 (parted) set 1 lvm on (lvm 활성화)
 (parted) q 
@@ -43,5 +42,4 @@ vgcreate TTvg /dev/sdb1
 lvcreate -n ttLV -L 100G TTvg
 vi /etc/fstab (fstab 작성)
 mount -a
-
 ```
