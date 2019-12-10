@@ -8,7 +8,7 @@ categories: Linux, Parted
  - 2TB 이상부터는 Fdisk 파티션 분할이 어렵다. Parted를 사용하자
 
 2. 기초 사용 
-'''bash
+```bash
 # parted /dev/sdb
 (parted) mklabel gpt (parted 에서는 mbr이 아닌 gpt를 사용하여야 한다)
 (parted) mkpart primary [start] [end] 
@@ -22,7 +22,7 @@ ex)
 (parted) q 
 
 mkfs.ext4 /dev/sdb1 
-'''
+```
 
 3. gpt, mbr 차이점 및 ext 파일시스템 별 차이점
 todo..추가하기
@@ -34,7 +34,7 @@ todo..추가하기
 todo..추가하기 (extension 등) 
 
 5. parted 이후 vg, pv, lv 작업 
-'''bash
+```bash
 (parted) set 1 lvm on (lvm 활성화)
 (parted) q 
 
@@ -44,4 +44,4 @@ lvcreate -n ttLV -L 100G TTvg
 vi /etc/fstab (fstab 작성)
 mount -a
 
-'''
+```
