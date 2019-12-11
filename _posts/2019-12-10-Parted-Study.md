@@ -24,9 +24,9 @@ mkfs.ext4 /dev/sdb1
 
 3. gpt, mbr 차이점 및 ext 파일시스템 별 차이점
 todo..추가하기
-  1. gpt
-  2. mbr
-  3. ext1~4 
+    1. gpt
+    2. mbr
+    3. ext1~4 
  
 4. 심화 parted
 todo..추가하기 (extension 등) 
