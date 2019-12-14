@@ -1,6 +1,6 @@
 ---
 title: "SpringBoot SpringSecurity static resource 설정"
-date: 2019-12-10 12:00:00 -0400
+date: 2019-12-14 12:00:00 -0400
 categories: Spring, SpringBoot, Resource, static
 ---
 
@@ -8,6 +8,7 @@ categories: Spring, SpringBoot, Resource, static
  - ![springboot-dir](/assets/images/Spring_dir_structure.png)
 
 2. WebConfig 설정 
+
 ```java
 @Configuration
 @EnableWebMvc
@@ -35,6 +36,7 @@ public class WebConfig implements WebMvcConfigurer {
 ```
 
 3. SpringSecurity 설정
+
 ```java
  @Override
     public void configure(WebSecurity web) throws Exception
