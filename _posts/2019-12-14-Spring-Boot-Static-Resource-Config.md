@@ -5,7 +5,7 @@ categories: Spring, SpringBoot, Resource, static
 ---
 
 1. Dir 구조
- - ![springboot-dir](/assets/images/springboot-dir-structure.png)
+ - ![springboot-dir](/assets/images/Spring_dir_structure.png)
 
 2. WebConfig 설정 
 ```java
