@@ -1,7 +1,7 @@
 ---
-title: "리눅스 커널 파라메터 설정 (For Oracle)"
+title: "리눅스 커널 파라메터, shell limit 설정 (For Oracle)"
 date: 2020-01-02 12:00:00 -0400
-categories: Linux, kernal, oracle, parameter, share, memory
+categories: Linux, kernal, oracle, parameter, share, memory, shell limit
 ---
 
 1. Linux 에서 각종 Subprogram 을 위한 Kernel parameter 설정 방법
@@ -58,3 +58,7 @@ fs.aio-max-nr=1048576
 아래의 링크에 정리 잘 되어 있다. 
 https://meetup.toast.com/posts/53
 
+6. shell limit 설정
+    - /etc/security/limits.conf 설정파일에서 설정을 반영하면 된다.
+    - 설정값은 domain type item value 순으로 입력하게 된다.
+    - ex      oracle soft nproc 2047 
