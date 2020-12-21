@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Linux(RHEL) raw-device 생성"
+title: Linux(RHEL) raw-device 생성
 date: 2019-12-26 12:00:00 -0400
 categories: linux
-tag: raw-device, oracle
+tags: [raw-device, oracle]
 sitemap :
   changefreq : daily
 ---
