@@ -1,7 +1,9 @@
 ---
+layout: "posts"
 title: "Parted 사용법"
 date: 2019-12-10 12:00:00 -0400
-categories: Linux, Parted
+categories: linux
+tags: [parted]
 ---
 
 1. Parted 명령어
