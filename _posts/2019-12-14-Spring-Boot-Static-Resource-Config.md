@@ -1,7 +1,9 @@
 ---
+layout: "posts"
 title: "SpringBoot SpringSecurity static resource 설정"
 date: 2019-12-14 12:00:00 -0400
-categories: Spring, SpringBoot, Resource, static
+categories: springBoot
+tags: [resource, static]
 ---
 
 1. Dir 구조
