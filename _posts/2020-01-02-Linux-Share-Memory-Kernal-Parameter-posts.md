@@ -1,5 +1,5 @@
 ---
-layout: "post"
+layout: "posts"
 title: "리눅스 커널 파라메터, shell limit 설정 (For Oracle)"
 date: 2020-01-02 12:00:00 -0400
 categories: "linux"
