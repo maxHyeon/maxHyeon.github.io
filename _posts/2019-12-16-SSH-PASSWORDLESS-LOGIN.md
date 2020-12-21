@@ -1,7 +1,8 @@
 ---
+layout: posts
 title: "SSH PasswordLess 로그인"
 date: 2019-12-16 12:00:00 -0400
-categories: Linux, SSH, Passwordless, 비밀번호
+categories: linux
 ---
 
 1. SSH Passwordless 로그인을 위해선 SSH 공개키 배포가 필요하다.
