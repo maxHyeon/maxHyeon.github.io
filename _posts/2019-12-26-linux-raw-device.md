@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: Linux(RHEL) raw-device 생성
 date: 2019-12-26 12:00:00 -0400
 categories: linux
