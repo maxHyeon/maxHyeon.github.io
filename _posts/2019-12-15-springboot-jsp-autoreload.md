@@ -1,7 +1,9 @@
 ---
+layout: "posts"
 title: "SpringBoot JSP 변경사항 반영. gradle"
 date: 2019-12-15 12:00:00 -0400
-categories: Spring, SpringBoot, JSP, Gradle
+categories: springboot
+tags: [gradle, spring]
 ---
 
 1. Spring Boot Migration 중 JSP 변경사항이 서버 reload 전까지 반영 안되는 사항이 있어서 찾아보았다.
