@@ -1,7 +1,9 @@
 ---
+layout: "posts"
 title: "Powershell GET-ACL 폴더 권한 조회"
 date: 2019-12-17 12:00:00 -0400
-categories: Window, NT, Powershell, GET-ACL, ACL
+categories: windows
+tags: [get-acl, powershell, acl]
 ---
 
 1. 폴더 권한 가져오는 Powershell 함수 GET-ACL 사용 예제
