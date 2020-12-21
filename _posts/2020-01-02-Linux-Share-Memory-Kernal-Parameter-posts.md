@@ -1,10 +1,8 @@
 ---
-
 layout: "post"
 title: "리눅스 커널 파라메터, shell limit 설정 (For Oracle)"
 date: 2020-01-02 12:00:00 -0400
 categories: "linux"
-
 ---
 
 1. Linux 에서 각종 Subprogram 을 위한 Kernel parameter 설정 방법
