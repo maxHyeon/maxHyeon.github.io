@@ -21,7 +21,7 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Minhyeon Park"
 description              : "Fridge Note"
-url                      : "https://maxhyeon.github.io"
+url                      : https://maxhyeon.github.io
 baseurl                  : "/"
 repository               :  "maxHyeon/maxHyeon.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
