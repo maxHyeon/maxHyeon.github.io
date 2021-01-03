@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "Stale NFS file handle / NFS 클라이언트쪽에서 NFS 문제"
 date: 2019-12-14 12:00:00 -0400
 categories: linux
