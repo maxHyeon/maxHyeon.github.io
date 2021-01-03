@@ -1,7 +1,8 @@
 ---
+layout: post
 title: "Stale NFS file handle / NFS 클라이언트쪽에서 NFS 문제"
 date: 2019-12-14 12:00:00 -0400
-categories: RHEL, Linux, NFS
+categories: linux
 ---
 
 1. Stale NFS file hande 발생 원인
