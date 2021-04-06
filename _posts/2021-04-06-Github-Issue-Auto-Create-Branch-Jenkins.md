@@ -48,6 +48,7 @@ categories: Jenkins
               echo "$REPONAME"
           }
           stage ('create repo') {
+                // Git 사용을 위해서 Jenkins 에 Git username 과 token Secret 는 생성 해 놓아야 한다. 
                 withCredentials([usernamePassword( credentialsId:'maxHyeon',usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                 //echo "$TOKENID"
                 //echo "$TOKEN"
