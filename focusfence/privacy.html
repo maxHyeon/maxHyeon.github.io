@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusFence — Privacy Policy / 개인정보처리방침</title>
+  <style>
+    :root {
+      --indigo: #3D5AFE;
+      --indigo-light: #8187FF;
+      --indigo-bg: #EEF1FF;
+      --text: #1A1A2E;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR",
+                   "Helvetica Neue", Arial, sans-serif;
+      background: #F8F9FF;
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--indigo);
+      color: var(--white);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header .app-icon {
+      width: 72px; height: 72px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
+    header p  { margin-top: 6px; opacity: 0.85; font-size: 0.95rem; }
+
+    /* ── LANG SWITCH ── */
+    .lang-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .lang-btn {
+      padding: 6px 22px;
+      border: 2px solid var(--indigo);
+      background: transparent;
+      color: var(--indigo);
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .lang-btn.active, .lang-btn:hover {
+      background: var(--indigo);
+      color: var(--white);
+    }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    }
+    .section-num {
+      display: inline-block;
+      width: 28px; height: 28px;
+      background: var(--indigo-bg);
+      color: var(--indigo);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 28px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .section h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--indigo);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+    }
+    .section p { margin-bottom: 12px; color: #374151; }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── TABLE ── */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+    .perm-table th {
+      background: var(--indigo-bg);
+      color: var(--indigo);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+    }
+    .perm-table th:first-child { border-radius: 10px 0 0 0; }
+    .perm-table th:last-child  { border-radius: 0 10px 0 0; }
+    .perm-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .perm-table tr:last-child td { border-bottom: none; }
+    .perm-table tr:nth-child(even) td { background: #FAFBFF; }
+    .perm-name {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 0.78rem;
+      color: var(--indigo);
+      background: var(--indigo-bg);
+      padding: 2px 7px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block;
+      background: #D1FAE5;
+      color: #065F46;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .badge-no  { background: #FEE2E2; color: #991B1B; }
+    .badge-local { background: #DBEAFE; color: #1E40AF; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--indigo-bg);
+      border-left: 4px solid var(--indigo);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.92rem;
+      color: #3730A3;
+    }
+
+    /* ── UPDATED ── */
+    .updated-bar {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 32px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 24px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--indigo); text-decoration: none; }
+
+    /* ── LANG SECTIONS ── */
+    .lang-ko, .lang-en { display: block; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 520px) {
+      header h1 { font-size: 1.6rem; }
+      .section  { padding: 22px 16px; }
+      .perm-table { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+<header>
+  <div class="app-icon">🛡️</div>
+  <h1>FocusFence</h1>
+  <p>Privacy Policy &nbsp;|&nbsp; 개인정보처리방침</p>
+</header>
+
+<!-- ══════════════════════════ LANGUAGE SWITCH ═══════════════════════════ -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('both')" id="btn-both">한국어 + English</button>
+  <button class="lang-btn"        onclick="setLang('ko')"   id="btn-ko">한국어</button>
+  <button class="lang-btn"        onclick="setLang('en')"   id="btn-en">English</button>
+</div>
+
+<!-- ════════════════════════════════ MAIN ════════════════════════════════ -->
+<main>
+
+  <!-- ─────────────────────── 한국어 버전 ─────────────────────── -->
+  <div class="lang-ko">
+
+    <div class="section">
+      <h2><span class="section-num">1</span>개요</h2>
+      <p>
+        FocusFence(이하 "앱")는 업무 집중 모드를 제공하는 Android 런처 앱입니다.
+        본 개인정보처리방침은 앱이 수집하는 정보, 사용 방법, 보호 방식에 대해 설명합니다.
+      </p>
+      <div class="callout">
+        📱 FocusFence는 <strong>서버가 없으며</strong>, 어떠한 데이터도 외부로 전송하지 않습니다.
+        모든 데이터는 <strong>사용자 기기 내에만</strong> 저장됩니다.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">2</span>수집하는 정보</h2>
+      <p>앱은 핵심 기능 제공을 위해 아래 정보를 <strong>기기 내에서만</strong> 처리합니다.</p>
+      <table class="perm-table">
+        <thead>
+          <tr>
+            <th>데이터 유형</th>
+            <th>수집 목적</th>
+            <th>저장 위치</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>설치된 앱 목록</td>
+            <td>허용 앱 화이트리스트 구성 및 표시</td>
+            <td><span class="badge badge-local">기기 로컬</span></td>
+          </tr>
+          <tr>
+            <td>집중 세션 기록<br><small>(시작·종료 시각, 지속 시간)</small></td>
+            <td>집중 통계 화면 제공</td>
+            <td><span class="badge badge-local">기기 로컬</span></td>
+          </tr>
+          <tr>
+            <td>허용 앱 목록</td>
+            <td>집중 모드 중 접근 가능한 앱 필터링</td>
+            <td><span class="badge badge-local">기기 로컬</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:14px;">
+        <span class="badge badge-no">수집 안 함</span>&nbsp;
+        이름, 이메일, 위치, 연락처, 결제 정보, 광고 식별자 등 개인 식별 정보는
+        일절 수집하지 않습니다.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">3</span>사용 권한 및 목적</h2>
+      <table class="perm-table">
+        <thead>
+          <tr>
+            <th>권한</th>
+            <th>사용 목적</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="perm-name">QUERY_ALL_PACKAGES</span></td>
+            <td>기기에 설치된 모든 앱 목록을 조회하여 화이트리스트 설정 화면에 표시</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">PACKAGE_USAGE_STATS</span></td>
+            <td>앱 사용 통계를 읽어 집중 세션 기록 및 통계 제공 (사용자가 직접 승인)</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">SYSTEM_ALERT_WINDOW</span></td>
+            <td>집중 모드 활성화 시 허용되지 않은 앱 위에 차단 오버레이 표시</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">AccessibilityService</span></td>
+            <td>실행 중인 앱을 감지하여 비허용 앱 실행 시 즉시 차단 (앱 내용 읽기 없음)</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">POST_NOTIFICATIONS</span></td>
+            <td>집중 모드 상태 및 타이머 알림 전송 (Android 13+)</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout" style="margin-top:16px;">
+        🔒 접근성 서비스는 <strong>앱 전환 이벤트만</strong> 수신하며, 키 입력·화면 내용·
+        개인 데이터는 절대 읽거나 저장하지 않습니다.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">4</span>데이터 사용 방법</h2>
+      <p>수집된 정보는 다음 목적으로만 사용됩니다.</p>
+      <ul style="padding-left:20px; color:#374151;">
+        <li style="margin-bottom:8px;">집중 모드 활성화·비활성화 기능 제공</li>
+        <li style="margin-bottom:8px;">허용 앱 목록 기반 앱 접근 제한</li>
+        <li style="margin-bottom:8px;">문장 타이핑 잠금 해제 기능 지원</li>
+        <li style="margin-bottom:8px;">집중 시간 통계 화면 구성</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">5</span>제3자 공유</h2>
+      <div class="callout">
+        🚫 FocusFence는 어떠한 데이터도 제3자에게 판매·공유·전송하지 않습니다.
+        광고 네트워크, 분석 서비스, 소셜 미디어 플러그인을 사용하지 않습니다.
+      </div>
+      <p>
+        앱에는 외부 서버, API, 클라우드 연동이 없으므로 기술적으로 외부 전송 자체가
+        불가능합니다.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">6</span>데이터 보관 및 삭제</h2>
+      <p>
+        모든 데이터는 사용자 기기의 앱 전용 저장 공간(내부 저장소)에만 보관됩니다.
+      </p>
+      <ul style="padding-left:20px; color:#374151;">
+        <li style="margin-bottom:8px;">
+          <strong>앱 삭제 시</strong> — 모든 데이터가 Android 시스템에 의해 자동 삭제됩니다.
+        </li>
+        <li style="margin-bottom:8px;">
+          <strong>데이터 초기화</strong> — 앱 설정 → '데이터 초기화' 메뉴에서 직접 삭제 가능합니다.
+        </li>
+        <li>
+          <strong>보관 기간 제한 없음</strong> — 별도 서버가 없으므로 원격 데이터 보관 기간은 해당 없습니다.
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">7</span>어린이 개인정보 보호</h2>
+      <p>
+        FocusFence는 만 13세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를
+        의도적으로 수집하지 않습니다. 아동이 앱을 사용하고 있다고 판단되는 경우 아래
+        연락처로 알려 주시기 바랍니다.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">8</span>보안</h2>
+      <p>
+        저장된 모든 데이터는 Android 기기의 앱 샌드박스 내에 보호됩니다.
+        다른 앱은 FocusFence의 데이터에 접근할 수 없습니다.
+        외부 전송이 없으므로 네트워크 경유 데이터 탈취 위험이 없습니다.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">9</span>방침 변경</h2>
+      <p>
+        본 방침이 변경될 경우, 앱 내 공지 또는 Google Play 스토어 업데이트 노트를 통해
+        사전 안내합니다. 중요한 변경 사항이 있는 경우 앱 실행 시 별도 동의를 요청할 수
+        있습니다.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">10</span>연락처</h2>
+      <p>개인정보 관련 문의 사항이 있으시면 아래로 연락해 주세요.</p>
+      <p>
+        📧 이메일:
+        <a href="mailto:privacy@focusfence.app" style="color:var(--indigo);">privacy@focusfence.app</a><br>
+        📦 패키지명: <span class="perm-name">com.focusfence</span><br>
+        🌐 Google Play: FocusFence
+      </p>
+    </div>
+
+    <div class="updated-bar">
+      최종 수정일: 2025년 8월 25일 &nbsp;|&nbsp; 시행일: 2025년 8월 25일
+    </div>
+
+  </div><!-- /.lang-ko -->
+
+  <!-- ─────────────────────── ENGLISH VERSION ─────────────────────── -->
+  <div class="lang-en" style="margin-top: 48px;">
+
+    <div style="text-align:center; margin-bottom:28px;">
+      <span style="display:inline-block; background:var(--indigo); color:#fff;
+                   border-radius:10px; padding:6px 20px; font-size:0.85rem; font-weight:600;">
+        English Version
+      </span>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">1</span>Overview</h2>
+      <p>
+        FocusFence (the "App") is an Android focus-mode launcher that helps you
+        stay productive by limiting access to distracting apps.
+        This Privacy Policy explains what information the App collects, how it is
+        used, and how it is protected.
+      </p>
+      <div class="callout">
+        📱 FocusFence operates <strong>entirely on-device</strong> with
+        <strong>no server</strong>. No data is ever transmitted externally.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">2</span>Information We Collect</h2>
+      <p>
+        The App processes the following information <strong>locally on your device only</strong>
+        to provide its core features.
+      </p>
+      <table class="perm-table">
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Purpose</th>
+            <th>Storage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Installed app list</td>
+            <td>Build and display the allowed-app whitelist</td>
+            <td><span class="badge badge-local">Device Local</span></td>
+          </tr>
+          <tr>
+            <td>Focus session records<br><small>(start/end time, duration)</small></td>
+            <td>Display focus statistics</td>
+            <td><span class="badge badge-local">Device Local</span></td>
+          </tr>
+          <tr>
+            <td>Allowed app list</td>
+            <td>Filter accessible apps during focus mode</td>
+            <td><span class="badge badge-local">Device Local</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:14px;">
+        <span class="badge badge-no">Not Collected</span>&nbsp;
+        We do <strong>not</strong> collect names, emails, location, contacts,
+        payment information, advertising identifiers, or any personally identifiable information.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">3</span>Permissions &amp; Their Purpose</h2>
+      <table class="perm-table">
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why It's Needed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="perm-name">QUERY_ALL_PACKAGES</span></td>
+            <td>Retrieve all installed apps to populate the whitelist configuration screen</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">PACKAGE_USAGE_STATS</span></td>
+            <td>Read app usage statistics to generate focus session records and statistics (user-granted)</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">SYSTEM_ALERT_WINDOW</span></td>
+            <td>Display a blocking overlay over non-whitelisted apps when focus mode is active</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">AccessibilityService</span></td>
+            <td>Detect which app is in the foreground to instantly block non-whitelisted apps (no content is read)</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">POST_NOTIFICATIONS</span></td>
+            <td>Send focus mode status and timer notifications (Android 13+)</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout" style="margin-top:16px;">
+        🔒 The Accessibility Service only receives <strong>app-switch events</strong>.
+        It never reads keystrokes, screen content, or personal data.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">4</span>How We Use Information</h2>
+      <p>Collected information is used solely for:</p>
+      <ul style="padding-left:20px; color:#374151;">
+        <li style="margin-bottom:8px;">Enabling and disabling focus mode</li>
+        <li style="margin-bottom:8px;">Restricting app access based on the allowed list</li>
+        <li style="margin-bottom:8px;">Supporting the passphrase typing unlock mechanism</li>
+        <li style="margin-bottom:8px;">Building the focus time statistics screen</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">5</span>Third-Party Sharing</h2>
+      <div class="callout">
+        🚫 FocusFence does <strong>not</strong> sell, share, or transmit any data
+        to third parties. The App contains no advertising networks, analytics services,
+        or social media plugins.
+      </div>
+      <p>
+        Because the App has no external server, API, or cloud integration, data
+        transmission to third parties is technically impossible.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">6</span>Data Retention &amp; Deletion</h2>
+      <p>
+        All data is stored exclusively in the App's private storage on your device.
+      </p>
+      <ul style="padding-left:20px; color:#374151;">
+        <li style="margin-bottom:8px;">
+          <strong>Uninstalling the App</strong> — Android automatically deletes all App data.
+        </li>
+        <li style="margin-bottom:8px;">
+          <strong>Manual reset</strong> — Go to App Settings → "Reset Data" to delete all records at any time.
+        </li>
+        <li>
+          <strong>No remote retention period</strong> — As there is no server, remote data retention is not applicable.
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">7</span>Children's Privacy</h2>
+      <p>
+        FocusFence is not directed at children under the age of 13 and does not
+        knowingly collect personal information from children. If you believe a child
+        is using the App, please contact us at the address below.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">8</span>Security</h2>
+      <p>
+        All stored data is protected within Android's app sandbox, preventing other
+        applications from accessing it. Because no data leaves your device,
+        there is no risk of interception in transit.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">9</span>Changes to This Policy</h2>
+      <p>
+        If this policy changes, we will notify you via an in-app notice or a
+        Google Play Store update note before the changes take effect. Material
+        changes may require renewed consent within the App.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2><span class="section-num">10</span>Contact Us</h2>
+      <p>For any privacy-related inquiries, please reach out to us:</p>
+      <p>
+        📧 Email:
+        <a href="mailto:privacy@focusfence.app" style="color:var(--indigo);">privacy@focusfence.app</a><br>
+        📦 Package: <span class="perm-name">com.focusfence</span><br>
+        🌐 Google Play: FocusFence
+      </p>
+    </div>
+
+    <div class="updated-bar">
+      Last Updated: August 25, 2025 &nbsp;|&nbsp; Effective Date: August 25, 2025
+    </div>
+
+  </div><!-- /.lang-en -->
+
+</main>
+
+<!-- ════════════════════════════ FOOTER ════════════════════════════════ -->
+<footer>
+  <p>© 2025 FocusFence &nbsp;·&nbsp;
+    <a href="mailto:privacy@focusfence.app">privacy@focusfence.app</a>
+  </p>
+  <p style="margin-top:6px;">
+    Package: com.focusfence &nbsp;·&nbsp; All data stored on-device only
+  </p>
+</footer>
+
+<!-- ════════════════════════════ SCRIPT ════════════════════════════════ -->
+<script>
+  function setLang(lang) {
+    const ko  = document.querySelector('.lang-ko');
+    const en  = document.querySelector('.lang-en');
+    const sep = en.previousElementSibling; // the "English Version" badge div
+
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('btn-' + lang).classList.add('active');
+
+    if (lang === 'both') {
+      ko.style.display = 'block';
+      en.style.display = 'block';
+    } else if (lang === 'ko') {
+      ko.style.display = 'block';
+      en.style.display = 'none';
+    } else {
+      ko.style.display = 'none';
+      en.style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>
