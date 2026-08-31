@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FocusFence — 업무 중 허용된 앱만. 집중을 방해하는 앱을 차단하고 진짜 일에 집중하세요.">
+<title>FocusFence — 비울수록 채워지는 시간</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --surface2: #1a1a24;
+    --border: #2a2a38;
+    --text: #f0f0f5;
+    --text-muted: #8888a0;
+    --accent: #6c63ff;
+    --accent-soft: #6c63ff22;
+    --orange: #ff6600;
+    --orange-soft: #ff660020;
+    --green: #22c55e;
+    --radius: 16px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans KR', 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 40px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-size: 18px; font-weight: 700; letter-spacing: -0.3px;
+    color: var(--text);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none; font-size: 14px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .btn-nav {
+    background: var(--accent); color: white;
+    padding: 8px 20px; border-radius: 8px;
+    font-size: 14px; font-weight: 500; text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .btn-nav:hover { opacity: 0.85; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, #6c63ff18 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent-soft); border: 1px solid #6c63ff44;
+    color: #a09fff; padding: 6px 14px; border-radius: 100px;
+    font-size: 13px; font-weight: 500; margin-bottom: 32px;
+  }
+  .hero-badge::before { content: '🔥'; }
+  .hero h1 {
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    max-width: 800px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(135deg, #6c63ff, #a78bfa);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 18px; color: var(--text-muted);
+    max-width: 520px; margin: 0 auto 48px;
+    line-height: 1.7; font-weight: 300;
+  }
+  .hero-cta {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: white;
+    padding: 14px 28px; border-radius: 12px;
+    font-size: 16px; font-weight: 600; text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--surface); color: var(--text);
+    border: 1px solid var(--border);
+    padding: 14px 28px; border-radius: 12px;
+    font-size: 16px; font-weight: 500; text-decoration: none;
+    transition: border-color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--accent); }
+
+  /* ── PHONE MOCKUP ── */
+  .phone-wrap {
+    position: relative; display: inline-block;
+    filter: drop-shadow(0 40px 80px #6c63ff30);
+  }
+  .phone {
+    width: 260px; height: 520px;
+    background: var(--surface);
+    border-radius: 40px;
+    border: 2px solid var(--border);
+    overflow: hidden;
+    position: relative;
+  }
+  .phone-notch {
+    width: 100px; height: 26px;
+    background: var(--bg);
+    border-radius: 0 0 16px 16px;
+    margin: 0 auto;
+    position: relative; z-index: 2;
+  }
+  .phone-content {
+    padding: 12px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .phone-header {
+    background: linear-gradient(135deg, #6c63ff, #7c3aed);
+    border-radius: 16px; padding: 16px;
+    text-align: left;
+  }
+  .phone-header-title { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+  .phone-header-sub { font-size: 11px; color: #c4b5fd; }
+  .phone-header-time { font-size: 22px; font-weight: 700; margin-top: 4px; }
+  .phone-section-label {
+    font-size: 10px; color: var(--text-muted);
+    padding: 4px 4px 0; font-weight: 500;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .app-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+    padding: 4px;
+  }
+  .app-icon {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+  }
+  .app-icon-img {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .app-icon-name { font-size: 9px; color: var(--text-muted); }
+  .divider { height: 1px; background: var(--border); margin: 4px 0; }
+
+  /* floating overlay badge */
+  .float-badge {
+    position: absolute; right: -20px; top: 120px;
+    width: 64px; height: 64px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 700; color: white;
+    box-shadow: 0 8px 24px #ff660060;
+    border: 3px solid var(--bg);
+  }
+  .float-badge-time { font-size: 14px; font-weight: 800; line-height: 1; }
+
+  /* ── SECTION COMMON ── */
+  section {
+    padding: 100px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 12px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700; letter-spacing: -1px;
+    line-height: 1.2; margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 16px; color: var(--text-muted);
+    max-width: 560px; line-height: 1.7;
+  }
+
+  /* ── PROBLEM ── */
+  .problem { text-align: center; }
+  .problem .section-sub { margin: 0 auto 64px; }
+  .stats-row {
+    display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 40px;
+    text-align: center; min-width: 200px;
+  }
+  .stat-num {
+    font-size: 48px; font-weight: 800; letter-spacing: -2px;
+    background: linear-gradient(135deg, #6c63ff, #a78bfa);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+  /* ── FEATURES ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px; margin-top: 56px;
+  }
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .feature-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .feature-icon {
+    width: 48px; height: 48px;
+    background: var(--accent-soft);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 20px;
+  }
+  .feature-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+  .feature-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── HOW IT WORKS ── */
+  .how { background: var(--surface); border-radius: 24px; padding: 80px 60px; }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px; margin-top: 56px;
+  }
+  .step { position: relative; }
+  .step::after {
+    content: '→';
+    position: absolute; right: -28px; top: 8px;
+    color: var(--border); font-size: 20px;
+  }
+  .step:last-child::after { display: none; }
+  .step-num {
+    width: 40px; height: 40px;
+    background: var(--accent); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; margin-bottom: 16px;
+  }
+  .step-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── UNLOCK ── */
+  .unlock-wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .unlock-card {
+    background: var(--surface);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 32px; font-size: 14px; color: var(--text-muted);
+  }
+  .unlock-quote {
+    font-size: 18px; font-style: italic;
+    color: var(--text); line-height: 1.6; margin-bottom: 12px;
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+  }
+  .unlock-author { font-size: 13px; color: var(--accent); text-align: right; }
+  .unlock-input {
+    margin-top: 20px;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 16px;
+    color: var(--text-muted); font-size: 13px;
+    font-family: inherit;
+  }
+  .method-list { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
+  .method {
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .method-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: var(--orange-soft); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-size: 16px;
+  }
+  .method-name { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+  .method-desc { font-size: 13px; color: var(--text-muted); }
+
+  /* ── SCHEDULE ── */
+  .schedule-demo {
+    background: var(--surface);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .schedule-header {
+    background: var(--surface2); padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px; font-weight: 600; color: var(--text-muted);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .schedule-item {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 24px; border-bottom: 1px solid var(--border);
+  }
+  .schedule-item:last-child { border-bottom: none; }
+  .schedule-days { display: flex; gap: 4px; }
+  .day-chip {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 600;
+  }
+  .day-chip.on { background: var(--accent); color: white; }
+  .day-chip.off { background: var(--surface2); color: var(--text-muted); }
+  .schedule-time { font-size: 15px; font-weight: 600; margin-left: auto; }
+  .schedule-dur { font-size: 12px; color: var(--text-muted); }
+  .toggle-on {
+    width: 44px; height: 24px;
+    background: var(--green); border-radius: 100px;
+    position: relative;
+  }
+  .toggle-on::after {
+    content: ''; position: absolute; right: 2px; top: 2px;
+    width: 20px; height: 20px; background: white; border-radius: 50%;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    text-align: center; padding: 100px 24px;
+  }
+  .cta-card {
+    background: linear-gradient(135deg, #6c63ff15, #7c3aed15);
+    border: 1px solid #6c63ff33;
+    border-radius: 24px; padding: 80px 40px;
+    max-width: 720px; margin: 0 auto;
+  }
+  .cta-card h2 { font-size: 40px; font-weight: 700; letter-spacing: -1px; margin-bottom: 16px; }
+  .cta-card p { color: var(--text-muted); font-size: 16px; margin-bottom: 40px; }
+  .store-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .store-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--text); color: var(--bg);
+    padding: 14px 24px; border-radius: 12px;
+    text-decoration: none; font-weight: 600; font-size: 15px;
+    transition: opacity 0.2s;
+  }
+  .store-btn:hover { opacity: 0.85; }
+  .store-btn-icon { font-size: 24px; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .footer-logo { font-size: 16px; font-weight: 700; }
+  .footer-logo span { color: var(--accent); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-copy { color: var(--text-muted); font-size: 12px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .hero h1 { letter-spacing: -1px; }
+    .how { padding: 48px 24px; }
+    .unlock-wrap { grid-template-columns: 1fr; gap: 40px; }
+    footer { padding: 32px 20px; }
+    .stat-card { min-width: 140px; padding: 24px; }
+    .stat-num { font-size: 36px; }
+    section { padding: 72px 20px; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @media (prefers-reduced-motion: no-preference) {
+    .feature-card, .stat-card, .phone-wrap {
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .feature-card:nth-child(1) { animation-delay: 0.1s; }
+    .feature-card:nth-child(2) { animation-delay: 0.2s; }
+    .feature-card:nth-child(3) { animation-delay: 0.3s; }
+    .feature-card:nth-child(4) { animation-delay: 0.4s; }
+    .feature-card:nth-child(5) { animation-delay: 0.5s; }
+    .feature-card:nth-child(6) { animation-delay: 0.6s; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Focus<span>Fence</span></div>
+  <div class="nav-links">
+    <a href="#features">기능</a>
+    <a href="#how">사용법</a>
+    <a href="#schedule">예약</a>
+    <a href="https://maxhyeon.github.io/focusfence/privacy.html" target="_blank">개인정보처리방침</a>
+    <a href="#download" class="btn-nav">다운로드</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Android 앱 · 무료</div>
+  <h1>스마트폰을 이기는<br><em>가장 스마트한 방법</em></h1>
+  <p class="hero-sub">
+    업무 중 허용된 앱만 보이는 미니멀 런처.<br>
+    집중을 방해하는 앱은 차단하고, 진짜 일에만 집중하세요.
+  </p>
+  <div class="hero-cta">
+    <a href="#download" class="btn-primary">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.33.18.7.24 1.06.18l12.83-7.4-2.79-2.79-11.1 10.01zm16.7-10.8L16.65 11l3.22-3.22c.58-.38.93-1.04.93-1.78 0-.58-.24-1.14-.66-1.55L6.91.22C6.5-.1 5.95-.06 5.57.3L5.48.4l11.58 11.58-3.3 3.3 3.3 3.3 1.14-.66c.73-.42 1.15-1.2 1.1-2.02-.04-.58-.32-1.11-.72-1.44z"/></svg>
+      Google Play에서 받기
+    </a>
+    <a href="#features" class="btn-secondary">
+      기능 살펴보기 ↓
+    </a>
+  </div>
+
+  <!-- Phone Mockup -->
+  <div class="phone-wrap">
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-content">
+        <div class="phone-header">
+          <div class="phone-header-title">FocusFence</div>
+          <div class="phone-header-sub">업무 모드 진행 중</div>
+          <div class="phone-header-time">24:59 남음</div>
+        </div>
+        <div class="phone-section-label">📌 자주 사용</div>
+        <div class="app-grid">
+          <div class="app-icon">
+            <div class="app-icon-img" style="background:#1a73e820;">📧</div>
+            <div class="app-icon-name">Gmail</div>
+          </div>
+          <div class="app-icon">
+            <div class="app-icon-img" style="background:#34a85320;">📅</div>
+            <div class="app-icon-name">Calendar</div>
+          </div>
+          <div class="app-icon">
+            <div class="app-icon-img" style="background:#0f9d5820;">📝</div>
+            <div class="app-icon-name">Keep</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="phone-section-label">💼 생산성</div>
+        <div class="app-grid">
+          <div class="app-icon">
+            <div class="app-icon-img" style="background:#4285f420;">🔍</div>
+            <div class="app-icon-name">Chrome</div>
+          </div>
+          <div class="app-icon">
+            <div class="app-icon-img" style="background:#ea433520;">💬</div>
+            <div class="app-icon-name">Meet</div>
+          </div>
+          <div class="app-icon">
+            <div class="app-icon-img" style="background:#fbbc0420;">📊</div>
+            <div class="app-icon-name">Sheets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Floating overlay -->
+    <div class="float-badge">
+      <div class="float-badge-time">24:59</div>
+      <div>집중</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="section-label">Problem</div>
+  <h2 class="section-title">하루 평균 스마트폰 사용 시간</h2>
+  <p class="section-sub">
+    SNS, 유튜브, 쇼핑. 앱 알림 하나가 집중력을 23분 잃게 만듭니다.
+    FocusFence는 그 유혹을 원천 차단합니다.
+  </p>
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num">5.4h</div>
+      <div class="stat-label">하루 평균 스마트폰 사용 시간</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">96×</div>
+      <div class="stat-label">하루 평균 폰 확인 횟수</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">23분</div>
+      <div class="stat-label">방해 후 집중력 회복 시간</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-label">Features</div>
+  <h2 class="section-title">집중에 필요한 것만</h2>
+  <p class="section-sub">복잡하지 않습니다. 허용된 앱만 보이고, 나머지는 사라집니다.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <div class="feature-title">앱 화이트리스트</div>
+      <div class="feature-desc">업무에 필요한 앱만 선택해 허용하세요. 나머지 앱은 업무 모드 중 사라집니다.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📌</div>
+      <div class="feature-title">자주 사용 앱 고정</div>
+      <div class="feature-desc">자주 쓰는 앱을 상단에 고정하고 드래그로 순서를 바꾸세요.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⏱️</div>
+      <div class="feature-title">집중 타이머</div>
+      <div class="feature-desc">설정한 시간만큼 집중 모드가 유지됩니다. 오버레이로 남은 시간을 확인하세요.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📅</div>
+      <div class="feature-title">예약 패턴</div>
+      <div class="feature-desc">요일과 시간을 설정해두면 자동으로 업무 모드가 시작됩니다.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💬</div>
+      <div class="feature-title">명언 타이핑 해제</div>
+      <div class="feature-desc">업무 모드를 해제하려면 명언을 직접 타이핑해야 합니다. 진짜 필요한 일인지 한 번 더 생각하게 됩니다.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <div class="feature-title">집중 통계</div>
+      <div class="feature-desc">오늘 집중 시간, 최장 집중, 중단 횟수를 주간 차트로 확인하세요.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" style="padding: 0 24px 100px;">
+  <div class="how">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">3단계로 시작하세요</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">허용 앱 설정</div>
+        <div class="step-desc">업무에 필요한 앱만 체크하세요. Gmail, Slack, Chrome 등 자주 쓰는 앱을 선택합니다.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">업무 모드 시작</div>
+        <div class="step-desc">버튼 하나로 시작. 허용된 앱만 남고 나머지는 모두 사라집니다.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">집중, 그리고 해제</div>
+        <div class="step-desc">타이머가 끝나거나, 명언을 타이핑해서 해제. 집중 통계는 자동으로 기록됩니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNLOCK METHODS -->
+<section id="unlock">
+  <div class="unlock-wrap">
+    <div>
+      <div class="section-label">Unlock</div>
+      <h2 class="section-title">쉽게 해제되면 의미가 없죠</h2>
+      <p class="section-sub">두 가지 해제 방법 중 선택할 수 있습니다. 둘 다 즉흥적인 해제를 막도록 설계되었습니다.</p>
+      <div class="method-list">
+        <div class="method">
+          <div class="method-icon">✍️</div>
+          <div>
+            <div class="method-name">명언 타이핑</div>
+            <div class="method-desc">랜덤 명언을 직접 타이핑해야 해제됩니다. 잠깐 멈추고 생각하게 됩니다.</div>
+          </div>
+        </div>
+        <div class="method">
+          <div class="method-icon">📳</div>
+          <div>
+            <div class="method-name">셰이킹</div>
+            <div class="method-desc">폰을 45초간 격렬히 흔들어야 해제됩니다. 그냥 앱 열기보다 확실한 의지가 필요합니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="unlock-card">
+      <div class="unlock-quote">
+        "The successful warrior is the average man, with laser-like focus."
+      </div>
+      <div class="unlock-author">— Bruce Lee</div>
+      <div class="unlock-input">
+        The successful warrior is the average m<span style="border-right: 1px solid #6c63ff; animation: blink 1s infinite;">|</span>
+      </div>
+      <div style="margin-top: 12px; font-size: 12px; color: var(--green); display: flex; align-items: center; gap: 4px;">
+        ● 대소문자·특수문자 무시됩니다
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+    <div>
+      <div class="section-label">Schedule</div>
+      <h2 class="section-title">매일 같은 시간에 자동으로</h2>
+      <p class="section-sub">요일과 시작·종료 시간을 설정해두면 알람처럼 업무 모드가 자동 시작됩니다. 의지력을 아끼세요.</p>
+    </div>
+    <div class="schedule-demo">
+      <div class="schedule-header">📅 예약 패턴</div>
+      <div class="schedule-item">
+        <div>
+          <div class="schedule-days">
+            <div class="day-chip on">월</div>
+            <div class="day-chip on">화</div>
+            <div class="day-chip on">수</div>
+            <div class="day-chip on">목</div>
+            <div class="day-chip on">금</div>
+            <div class="day-chip off">토</div>
+            <div class="day-chip off">일</div>
+          </div>
+          <div class="schedule-dur" style="margin-top: 4px;">09:00 → 11:00 · 120분</div>
+        </div>
+        <div class="schedule-time">09:00</div>
+        <div class="toggle-on"></div>
+      </div>
+      <div class="schedule-item">
+        <div>
+          <div class="schedule-days">
+            <div class="day-chip on">월</div>
+            <div class="day-chip off">화</div>
+            <div class="day-chip on">수</div>
+            <div class="day-chip off">목</div>
+            <div class="day-chip on">금</div>
+            <div class="day-chip off">토</div>
+            <div class="day-chip off">일</div>
+          </div>
+          <div class="schedule-dur" style="margin-top: 4px;">14:00 → 15:00 · 60분</div>
+        </div>
+        <div class="schedule-time">14:00</div>
+        <div class="toggle-on"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" id="download">
+  <div class="cta-card">
+    <h2>비울수록 채워지는 시간</h2>
+    <p>지금 무료로 다운로드하세요. 광고 없음, 구독 없음.</p>
+    <div class="store-btns">
+      <a href="https://play.google.com/store/apps/details?id=com.focusfence" class="store-btn" target="_blank">
+        <span class="store-btn-icon">▶</span>
+        <div>
+          <div style="font-size: 11px; font-weight: 400; opacity: 0.7;">다운로드</div>
+          Google Play
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Focus<span>Fence</span></div>
+  <div class="footer-links">
+    <a href="https://maxhyeon.github.io/focusfence/privacy.html" target="_blank">개인정보처리방침</a>
+    <a href="mailto:maxhyeon.park@gmail.com">문의</a>
+  </div>
+  <div class="footer-copy">© 2026 FocusFence. All rights reserved.</div>
+</footer>
+
+<style>
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+</style>
+
+</body>
+</html>
