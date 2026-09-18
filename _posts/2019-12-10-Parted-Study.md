@@ -1,9 +1,11 @@
 ---
+published: false
 layout: post
 title: "Parted 사용법"
 date: 2019-12-10 12:00:00 -0400
 categories: linux
 tags: [parted]
+published: false
 ---
 
 1. Parted 명령어

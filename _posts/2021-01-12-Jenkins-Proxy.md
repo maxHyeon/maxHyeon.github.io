@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 title: "젠킨스 Ngnix Reverse Proxy 설정"
 date: 2021-01-12 12:00:00 -0400
