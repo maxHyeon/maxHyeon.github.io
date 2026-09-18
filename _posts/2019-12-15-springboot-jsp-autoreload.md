@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: "SpringBoot JSP 변경사항 반영. gradle"
 date: 2019-12-15 12:00:00 -0400

@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: "Powershell GET-ACL 폴더 권한 조회"
 date: 2019-12-17 12:00:00 -0400

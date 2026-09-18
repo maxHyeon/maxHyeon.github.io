@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: "Github Issue 생성시 Feature Branch Auto Generate"
 date: 2021-04-06 12:00:00 -0400
