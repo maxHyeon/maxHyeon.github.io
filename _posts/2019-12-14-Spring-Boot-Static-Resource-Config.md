@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 title: "SpringBoot SpringSecurity static resource 설정"
 date: 2019-12-14 12:00:00 -0400

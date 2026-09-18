@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 title: "리눅스 CR/LF 변환 파이썬 & 끝에 라인개행 들어간 파일 제거"
 date: 2021-03-17 12:00:00 -0400

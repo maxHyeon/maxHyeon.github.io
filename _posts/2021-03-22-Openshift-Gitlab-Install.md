@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 title: "Openshift Gitlab Helm 설치"
 date: 2021-03-17 12:00:00 -0400
