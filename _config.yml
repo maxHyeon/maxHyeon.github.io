@@ -87,22 +87,22 @@ actions:
     static_url: false
 
 comments:
-  provider: # [disqus | utterances | giscus]
+  provider: giscus
   disqus:
     shortname:
   utterances:
     repo:
     issue_term:
   giscus:
-    repo: # maxHyeon/maxHyeon.github.io
-    repo_id:
-    category:
-    category_id:
-    mapping:
-    strict:
-    input_position:
-    lang:
-    reactions_enabled:
+    repo: maxHyeon/maxHyeon.github.io
+    repo_id: MDEwOlJlcG9zaXRvcnkxMjUzNTk5MzM=
+    category: Announcements
+    category_id: DIC_kwDOB3jXPc4DF22A
+    mapping: pathname
+    strict: 0
+    input_position: bottom
+    lang: ko
+    reactions_enabled: 1
 
 # Self-hosted static assets, optional
 assets:
