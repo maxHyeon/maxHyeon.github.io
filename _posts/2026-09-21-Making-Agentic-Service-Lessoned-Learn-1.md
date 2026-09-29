@@ -11,7 +11,7 @@ categories: AI
 
 # 목차 
 1. 서비스 소개
-2. [전화 영어 에이전트](2026-09-21-Making-Agentic-Service-Lessoned-Learn-2.md)
+2. [전화 영어 에이전트]()
 3. Book Club
 4. 종합
 
@@ -65,4 +65,4 @@ categories: AI
 - 전화 영어 에이전트 서비스에 대한 AI workflow, loop, 프롬포트, tool, 아키텍처 소개 및 개발 과정에서의 교훈을 다룹니다. 
 
 # 전화 영어 에이전트 
-[전화 영어 에이전트](2026-09-21-Making-Agentic-Service-Lessoned-Learn-2.md)
+[전화 영어 에이전트]()
