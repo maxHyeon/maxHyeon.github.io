@@ -14,10 +14,10 @@ timezone: Asia/Seoul
 
 title: MaxHyeon
 
-tagline: 기록하고, 남긴다.
+tagline: 
 
 description: >-
-  개발과 일상을 기록하는 블로그
+  
 
 # Fill in the protocol & hostname for your site.
 url: "https://blog.kitspot.xyz"
