@@ -46,7 +46,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: # Google Analytics ID (나중에 추가)
+    id: G-PNE0ETRYNT
   goatcounter:
     id:
   umami:
