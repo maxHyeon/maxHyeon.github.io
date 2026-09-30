@@ -4,6 +4,8 @@ layout: post
 title: "두 AI 서비스 개발 경험과 교훈 - 1"
 date: 2026-09-21 12:00:00 -0900
 categories: AI
+tags: [AI Agent, Prompt Engineering, Workflow, Claude, AWS Bedrock, Book Club, AWS, 클라우드 아키텍처, 아키텍처]
+description: "전화 영어 에이전트의 Agent Loop, 프롬프트, Tool 설계와 개발 과정에서 겪은 문제 해결, 그리고 AWS 클라우드 아키텍처 기반 독서 토론 서비스 Book Club의 개발 경험을 공유합니다."
 ---
 
 # 들어가며
