@@ -13,7 +13,7 @@ description: "전화 영어 에이전트의 Agent Loop, 프롬프트, Tool 설�
 
 ## 시리즈 목차
 1. 서비스 소개
-2. 전화 영어 에이전트
+2. [전화 영어 에이전트](/posts/Making-Agentic-Service-Lessoned-Learn-2)
 3. Book Club
 4. 종합
 
@@ -69,4 +69,4 @@ description: "전화 영어 에이전트의 Agent Loop, 프롬프트, Tool 설�
 - 전화 영어 에이전트 서비스에 대한 AI workflow, loop, 프롬프트, tool, 아키텍처 소개 및 개발 과정에서의 Lessons & Learn 을 다룹니다. 
 
 ## 전화 영어 에이전트 
-전화 영어 에이전트
+[전화 영어 에이전트](/posts/Making-Agentic-Service-Lessoned-Learn-2)

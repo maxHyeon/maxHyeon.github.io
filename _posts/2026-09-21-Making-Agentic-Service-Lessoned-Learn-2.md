@@ -10,7 +10,7 @@ mermaid: true
 ---
 
 ## 들어가며
-- [이전 블로그 포스트](2026-09-21-Making-Agentic-Service-Lessoned-Learn-1.md) 에 이어 [전화 영어 에이전트 서비스](https://github.com/maxHyeon/phone-eng-agent-v2)에 대한 기술적 내용과 개발 과정에서 얻은 교훈 등을 다룹니다.
+- [이전 블로그 포스트](/posts/Making-Agentic-Service-Lessoned-Learn-1/) 에 이어 [전화 영어 에이전트 서비스](https://github.com/maxHyeon/phone-eng-agent-v2)에 대한 기술적 내용과 개발 과정에서 얻은 교훈 등을 다룹니다.
 
 ## 목차 
 1. [서비스 소개](#서비스-소개)
