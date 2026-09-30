@@ -3,7 +3,7 @@
 
 @use 'abstracts/variables' with (
   $theme: '{{ site.theme_mode }}',
-  $main-content-max-width: 1700px
+  $main-content-max-width: 1600px
 );
 
 /* prettier-ignore */
@@ -12,3 +12,31 @@
   .bundle
 {%- endif -%}
 ';
+
+/* Mermaid diagram: allow horizontal scroll and set minimum width */
+.mermaid {
+  overflow-x: auto;
+  min-width: 100%;
+
+  svg {
+    min-width: 1200px;
+    height: auto;
+  }
+
+  .nodeLabel {
+    font-size: 16px;
+  }
+
+  .edgeLabel {
+    font-size: 14px;
+  }
+
+  .cluster-label {
+    font-size: 18px;
+  }
+}
+
+/* Post images: limit width to original default */
+.post-content img:not(.mermaid img) {
+  max-width: 850px;
+}

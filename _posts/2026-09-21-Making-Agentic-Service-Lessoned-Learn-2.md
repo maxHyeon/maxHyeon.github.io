@@ -66,45 +66,33 @@ mermaid: true
 ```mermaid
 flowchart TD
   subgraph row1["수업준비"]
-        direction LR
-        C[어제/오늘 일정 첨삭]
-        C --> D[사용자 내용 검토]
-        D --> E[추가 대화 진행]
-        E --> F[아티클 분석]
-        F --> G[표현 정리]
-        G --> H[질문 논의]
+    direction LR
+    C[어제/오늘 일정 첨삭] --> D[사용자 내용 검토] --> E[추가 대화 진행] --> F[아티클 분석] --> G[표현 정리] --> H[질문 논의]
   end
-    subgraph row2["수업 진행"]
-        direction LR
-        H --> J[인간 교육자와<br/>전화영어 수업]
-        J --> K[실제 수업 진행]
-    end
-    subgraph row3["수업 후 복습"]
-        direction LR
-        K --> N[녹음 파일 전사]
-        N --> O[오류 유형 분류]
-        O --> P[틀린 문장 카테고리화]
-        P --> Q[학습용 드릴 생성]
-        Q --> R[리포트 작성]
-        R --> S[최종 학습 리포트 완성]
-        S --> T[사용자에게 제공]
-    end
-    subgraph row4["지속 개선"]
-        direction LR
-        T --> U[사용자 프로필 업데이트]
-        U --> V[다음 수업에 프로필 데이터 활용]
-    end
-    
-    
-    classDef preparation fill:#f0f9ff,stroke:#38bdf8
-    classDef withTeacher fill:#f0fdf4,stroke:#4ade80
-    classDef analysis fill:#fff7ed,stroke:#fb923c
-    classDef output fill:#fdf4ff,stroke:#e879f9
-    
-    class B,C,D,E,F,G,H preparation
-    class J,K,L withTeacher
-    class M,N,O,P,Q,R analysis
-    class S,T output
+  subgraph row2["수업 진행"]
+    direction LR
+    J[인간 교육자와<br/>전화영어 수업] --> K[실제 수업 진행]
+  end
+  subgraph row3["수업 후 복습"]
+    direction LR
+    N[녹음 파일 전사] --> O[오류 유형 분류] --> P[틀린 문장 카테고리화] --> Q[학습용 드릴 생성] --> R[리포트 작성] --> S[최종 학습 리포트 완성] --> T[사용자에게 제공]
+  end
+  subgraph row4["지속 개선"]
+    direction LR
+    U[사용자 프로필 업데이트] --> V[다음 수업에 프로필 데이터 활용]
+  end
+
+  row1 --> row2 --> row3 --> row4
+
+  classDef preparation fill:#f0f9ff,stroke:#38bdf8
+  classDef withTeacher fill:#f0fdf4,stroke:#4ade80
+  classDef analysis fill:#fff7ed,stroke:#fb923c
+  classDef output fill:#fdf4ff,stroke:#e879f9
+
+  class C,D,E,F,G,H preparation
+  class J,K withTeacher
+  class N,O,P,Q,R analysis
+  class S,T output
 ```
 
 ### 공통 Agent Loop
