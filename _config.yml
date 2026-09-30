@@ -14,10 +14,10 @@ timezone: Asia/Seoul
 
 title: MaxHyeon
 
-tagline: 
+tagline: 빌더의 빌드 로그
 
 description: >-
-  
+  애플리케이션 및 클라우드 아키텍트가 직접 만든 서비스와 프로젝트의 개발 경험, AI, 클라우드 아키텍처, 양자 컴퓨팅 등 기술 이야기를 공유합니다.
 
 # Fill in the protocol & hostname for your site.
 url: "https://blog.kitspot.xyz"

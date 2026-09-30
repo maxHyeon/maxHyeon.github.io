@@ -1,0 +1,26 @@
+# MaxHyeon Blog
+
+> 애플리케이션 및 클라우드 아키텍트의 기술 블로그
+
+Minhyeon Park(maxHyeon)이 운영하는 기술 블로그입니다.
+애플리케이션 개발, 클라우드 아키텍처, AI 서비스, 양자 컴퓨팅 등 폭넓은 기술 주제를 다루며, 직접 만든 서비스와 프로젝트의 개발 경험과 교훈을 공유합니다.
+
+## 주요 관심 분야
+
+- 애플리케이션 설계 및 개발
+- 클라우드 아키텍처 (AWS)
+- AI / AI Agentic Service
+- 양자 컴퓨팅
+
+## 오픈소스 프로젝트
+
+- [전화 영어 에이전트](https://github.com/maxHyeon/phone-eng-agent-v2): AI 기반 전화 영어 학습 보조 서비스
+
+## 블로그 게시글
+
+- [두 AI 서비스 개발 경험과 교훈 - 1](https://blog.kitspot.xyz/posts/Making-Agentic-Service-Lessoned-Learn-1/): AI Agentic Service 소개 및 주요 기능
+- [두 AI 서비스 개발 경험과 교훈 - 2](https://blog.kitspot.xyz/posts/Making-Agentic-Service-Lessoned-Learn-2/): Workflow, Prompt, Tool, 아키텍처 및 개발 회고
+
+## 연락처
+
+- GitHub: https://github.com/maxHyeon
