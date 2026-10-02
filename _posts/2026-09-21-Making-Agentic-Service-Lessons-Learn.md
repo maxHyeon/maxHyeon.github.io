@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "두 AI 서비스 개발 경험과 교훈 - 2 - 전화 영어 에이전트"
+title: "전화 영어 AI Agent 서비스 개발 Lessones & Learn"
 date: 2026-09-21 12:00:00 -0900
 categories: AI
 tags: [AI Agent, Prompt Engineering, Workflow, Agent Loop, Claude, AWS Bedrock, mlx-whisper, 음성 전사, Tool Use, 오픈소스]
@@ -10,7 +10,7 @@ mermaid: true
 ---
 
 ## 들어가며
-- [이전 블로그 포스트](/posts/Making-Agentic-Service-Lessoned-Learn-1/) 에 이어 [전화 영어 에이전트 서비스](https://github.com/maxHyeon/phone-eng-agent-v2)에 대한 기술적 내용과 개발 과정에서 얻은 교훈 등을 다룹니다.
+- AI 광풍이 시작된 지도 어언 몇 년째, 바쁘다는 핑계로 미뤄오던 서비스 개발에 대한 열정이 갑자기 타올라 만들게 된 서비스들 중 전화 영어를 도와주는 AI Agent 서비스를 소개하고, 개발 과정에서 겪은 경험과 교훈을 전달하고자 합니다.
 
 ## 목차 
 1. [서비스 소개](#서비스-소개)
@@ -30,6 +30,9 @@ mermaid: true
 2. 서비스를 성공적으로 런칭해서 돈 버는 성공기
 3. 블로그를 보고 바로 AI 서비스를 만들 수 있는 비결
 4. 상세한 코드와 상당히 깊은 기술적 고찰
+
+## AI Agentic Service ? 
+- AI Agentic Service 는 결정론적 알고리즘을 따르는 기존의 어플리케이션 그리고 AI 를 이용하지만 제한이 있는 단순한 질의응답, 콘텐츠 생산을 하는 서비스와 다르게 AI 가 능동적으로 상황을 파악하고, 스스로 목표를 설정하고 적절한 외부 시스템과 도구를 활용해 사용자에게 필요한 업무를 완료하고, 가치를 전달하는 서비스입니다.
 
 ## 서비스 소개
 ### 전화 영어 에이전트 - [설치 가능한 프로젝트 링크](https://github.com/maxHyeon/phone-eng-agent-v2)
@@ -461,8 +464,3 @@ LICENSE, CONTRIBUTING, CHANGELOG 와 같은 다양한 문서들의 용도와, �
 3. 서비스 오픈을 위한 검토사항과 AI로 개발할 때의 고려사항 
 4. 오픈소스 공개에 대해 미리 알면 좋은 점 
 5. 전화영어 서비스에 도움이 되는 오픈소스 프로젝트 
-
-## 다음 시리즈
-Vibe Coding 으로 만든 독서 토론 서비스 Book Club 의 개발 과정과 개발 전 미리 알아야 할 내용들
-
-## Book Club

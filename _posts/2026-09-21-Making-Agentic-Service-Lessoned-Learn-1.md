@@ -1,7 +1,7 @@
 ---
-published: true
+published: False
 layout: post
-title: "두 AI 서비스 개발 경험과 교훈 - 1"
+title: "AI Agent 서비스 개발 경험과 교훈 - 1"
 date: 2026-09-21 12:00:00 -0900
 categories: AI
 tags: [AI Agent, Prompt Engineering, Workflow, Claude, AWS Bedrock, Book Club, AWS, 클라우드 아키텍처, 아키텍처]
@@ -14,7 +14,7 @@ description: "전화 영어 에이전트의 Agent Loop, 프롬프트, Tool 설�
 ## 시리즈 목차
 1. 서비스 소개
 2. [전화 영어 에이전트](/posts/Making-Agentic-Service-Lessoned-Learn-2)
-3. Book Club
+
 4. 종합
 
 ## 이 블로그 포스트는 아래와 같은 내용을 포함하고 있습니다.
@@ -22,7 +22,6 @@ description: "전화 영어 에이전트의 Agent Loop, 프롬프트, Tool 설�
 2. AI Agentic Service 개발간 발생한 기술적 문제와 그 해결
 3. AI Agentic Service 를 개발할 때 삽질을 덜 하는 법
 4. 전화 영어를 하고 있다면, 어쩌면 도움이 될 오픈소스 서비스
-5. AWS 기반의 AI 챗봇 서비스의 아키텍처 결정시 주의점
 
 ## 기대할 수 없는 내용들
 1. AI로 서비스 자동 개발 공장을 만들어 돈 벌기 
@@ -30,8 +29,7 @@ description: "전화 영어 에이전트의 Agent Loop, 프롬프트, Tool 설�
 3. 블로그를 보고 바로 AI 서비스를 만들 수 있는 비결
 4. 상세한 코드와 상당히 깊은 기술적 고찰
 
-## AI Agentic Service ? 
-- AI Agentic Service 는 결정론적 알고리즘을 따르는 기존의 어플리케이션 그리고 AI 를 이용하지만 제한이 있는 단순한 질의응답, 콘텐츠 생산을 하는 서비스와 다르게 AI 가 능동적으로 상황을 파악하고, 스스로 목표를 설정하고 적절한 외부 시스템과 도구를 활용해 사용자에게 필요한 업무를 완료하고, 가치를 전달하는 서비스입니다.
+
 
 ## 블로그에서 소개되는 두 서비스들
 ### 전화 영어 에이전트 - [설치 가능한 프로젝트 링크](https://github.com/maxHyeon/phone-eng-agent-v2)
